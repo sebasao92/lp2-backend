@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -22,6 +23,6 @@ public class UserViewServiceImpl implements UserViewService {
         log.info("Requesting all users");
         return userRepository.findAll().stream()
                 .map(UserEntity::toDomain)
-                .toList();
+                .collect(Collectors.toList());
     }
 }
