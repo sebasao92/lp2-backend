@@ -9,11 +9,13 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.With;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@With
 public class User {
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
@@ -33,5 +35,15 @@ public class User {
 
     public UserEntity toEntity() {
         return UserMapper.INSTANCE.mapToEntity(this);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", photoUrl='" + photoUrl + '\'' +
+                ", type=" + type +
+                '}';
     }
 }

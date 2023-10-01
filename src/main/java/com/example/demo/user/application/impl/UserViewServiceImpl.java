@@ -5,11 +5,13 @@ import com.example.demo.user.domain.User;
 import com.example.demo.user.infrastructure.repository.UserEntity;
 import com.example.demo.user.infrastructure.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@Slf4j
 @RequiredArgsConstructor
 public class UserViewServiceImpl implements UserViewService {
 
@@ -17,6 +19,7 @@ public class UserViewServiceImpl implements UserViewService {
 
     @Override
     public List<User> findAll() {
+        log.info("Requesting all users");
         return userRepository.findAll().stream()
                 .map(UserEntity::toDomain)
                 .toList();
