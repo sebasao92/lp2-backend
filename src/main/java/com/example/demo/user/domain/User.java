@@ -22,11 +22,14 @@ public class User {
     @NotBlank(message = "Name cannot be null or empty")
     private String name;
 
-    @NotNull(message = "Last name cannot be null or empty")
+    @NotBlank(message = "Last name cannot be null or empty")
     private String lastName;
 
-    @NotNull(message = "Photo URL cannot be null or empty")
+    @NotBlank(message = "Photo URL cannot be null or empty")
     private String photoUrl;
+
+    @NotNull(message = "Type cannot be null")
+    private UserType type;
 
     public UserEntity toEntity() {
         return UserMapper.INSTANCE.mapToEntity(this);

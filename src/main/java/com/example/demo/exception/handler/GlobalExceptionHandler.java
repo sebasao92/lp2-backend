@@ -25,4 +25,11 @@ public class GlobalExceptionHandler {
                                         .map(FieldError::getDefaultMessage)
                                         .collect(Collectors.joining(", "))));
     }
+
+    @ExceptionHandler(Throwable.class)
+    public ResponseEntity<ErrorResponse> handleRemainingExceptions(Throwable exception) {
+        return ResponseEntity
+                .badRequest()
+                .body(new ErrorResponse(exception.getMessage()));
+    }
 }
