@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS user_table (
+    id BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255),
+    last_name VARCHAR(255),
+    photo_url VARCHAR(1000)
+);
