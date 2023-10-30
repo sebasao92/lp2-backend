@@ -3,7 +3,7 @@ Backend project for Programming Languages II
 
 ## How to run it
 ### Requirements:
-* Java 11 JRE.
+* Java JDK 11.
 
 ### Instructions:
 1. Open the git bash terminal where you have the project.
